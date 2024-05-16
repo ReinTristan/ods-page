@@ -8,9 +8,9 @@ import { UnProtectedRoute } from './components/UnProtectedRoute'
 import Register from './routes/Register'
 import { Toaster } from './components/ui/sonner'
 import Profile from './routes/Profile'
-import PasaPalabras from './routes/PasaPalabras'
 import Ahorcado from './routes/Ahorcado'
-import SopaDeLetras from './routes/SopaDeLetras'
+// import PasaPalabras from './routes/PasaPalabras'
+// import SopaDeLetras from './routes/SopaDeLetras'
 
 const router = createBrowserRouter([
 	{
@@ -33,22 +33,22 @@ const router = createBrowserRouter([
 				path: 'game-1/:id',
 				element: <Ahorcado />,
 			},
-			{
-				path: 'game-2',
-				element: <Navigate to='/game-2/1' />,
-			},
-			{
-				path: 'game-2/:id',
-				element: <PasaPalabras />,
-			},
-			{
-				path: 'game-3',
-				element: <Navigate to='/game-3/1' />,
-			},
-			{
-				path: 'game-3/:id',
-				element: <SopaDeLetras />,
-			},
+			// {
+			// 	path: 'game-2',
+			// 	element: <Navigate to='/game-2/1' />,
+			// },
+			// {
+			// 	path: 'game-2/:id',
+			// 	element: <PasaPalabras />,
+			// },
+			// {
+			// 	path: 'game-3',
+			// 	element: <Navigate to='/game-3/1' />,
+			// },
+			// {
+			// 	path: 'game-3/:id',
+			// 	element: <SopaDeLetras />,
+			// },
 			{
 				path: '/profile',
 				element: <Profile />,

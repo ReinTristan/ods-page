@@ -13,7 +13,6 @@ export default function Login() {
 	const navigate = useNavigate()
 	const handleLogin = () => {
 		const users = JSON.parse(localStorage.getItem('users')) ?? []
-		console.log(users)
 		const find = users.find(
 			(user) => user.email === email && user.password === password
 		)

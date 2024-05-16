@@ -1,4 +1,13 @@
 import { Button } from '@/components/ui/button'
+import {
+	Dialog,
+	DialogClose,
+	DialogContent,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { ODS_INFO } from '@/lib/informacionODS'
 import { Search } from 'lucide-react'
@@ -47,13 +56,62 @@ export default function Home() {
 							<Button asChild>
 								<Link to={`/game-1/${selectedODS.id}`}>Ahorcado</Link>
 							</Button>
-							<Button asChild className='flex'>
-								<Link to={`/game-2/${selectedODS.id}`}>Pasapalabras</Link>
-							</Button>
-
-							<Button asChild>
-								<Link to={`/game-3/${selectedODS.id}`}>Sopa de letras</Link>
-							</Button>
+							<Dialog>
+								<DialogTrigger asChild>
+									<Button className='flex'>Pasapalabras</Button>
+								</DialogTrigger>
+								<DialogContent>
+									<DialogHeader>
+										<DialogTitle></DialogTitle>
+									</DialogHeader>
+									<div>
+										<div className='w-30 aspect-square'>
+											<img
+												src='https://static.vecteezy.com/system/resources/previews/001/218/694/non_2x/under-construction-warning-sign-vector.jpg'
+												className='w-full h-full object-cover'
+											/>
+										</div>
+										<div className='flex justify-between'>
+											<span className='text-xl font-semibold'>
+												Esta sección esta en construcción
+											</span>
+										</div>
+									</div>
+									<DialogFooter>
+										<DialogClose asChild>
+											<Button>Regresar</Button>
+										</DialogClose>
+									</DialogFooter>
+								</DialogContent>
+							</Dialog>
+							<Dialog>
+								<DialogTrigger asChild>
+									<Button className='flex'>Sopa de letras</Button>
+								</DialogTrigger>
+								<DialogContent>
+									<DialogHeader>
+										<DialogTitle></DialogTitle>
+									</DialogHeader>
+									<div>
+										<div className='w-30 aspect-square'>
+											<img
+												src='https://static.vecteezy.com/system/resources/previews/001/218/694/non_2x/under-construction-warning-sign-vector.jpg'
+												className='w-full h-full object-cover'
+											/>
+										</div>
+										<div className='flex justify-between'>
+											<span className='text-xl font-semibold'>
+												Esta sección esta en construcción
+											</span>
+										</div>
+									</div>
+									<DialogFooter>
+										<DialogClose asChild>
+											<Button>Regresar</Button>
+										</DialogClose>
+									</DialogFooter>
+								</DialogContent>
+							</Dialog>
 						</div>
 					</div>
 				</div>
