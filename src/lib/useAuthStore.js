@@ -15,6 +15,7 @@ export const useAuthStore = create(
 		// Action to set the user
 		setUser: (user) => {
 			set({ user })
+			if (!user) return
 			// Manually save to localStorage
 			const users = JSON.parse(localStorage.getItem('users')) || []
 			const existingUserIndex = users.findIndex(

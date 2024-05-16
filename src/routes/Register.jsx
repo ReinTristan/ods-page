@@ -32,11 +32,8 @@ export default function Register() {
 			return
 		}
 
-		users.push(userData)
-		localStorage.setItem(
-			'users',
-			JSON.stringify({ ...users, score: 0, streak: 0 })
-		)
+		users.push({ ...userData, score: 0, streak: 0 })
+		localStorage.setItem('users', JSON.stringify(users))
 		navigate('/auth/login')
 	}
 	return (

@@ -19,7 +19,6 @@ export default function Ahorcado() {
 		let ods = odsID > 17 || odsID < 1 ? 1 : odsID
 		return ODS_INFO[`ODS${ods}`]
 	})
-	console.log(ODS)
 	const [wordToGuess] = useState(() => {
 		const word = getWords(ODS.palabras, 1).pop()
 		return {
@@ -138,7 +137,6 @@ export default function Ahorcado() {
 }
 
 function HangmanWord({ guessedLetters, wordToGuess, reveal = false }) {
-	console.log(guessedLetters)
 	return (
 		<div className='flex justify-center gap-1 text-[6rem] font-bold uppercase px-4 flex-wrap'>
 			{wordToGuess.split('').map((letter, index) => (

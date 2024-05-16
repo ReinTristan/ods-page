@@ -53,7 +53,6 @@ export default function PasaPalabras() {
 					<Button
 						onClick={() => {
 							setSelectedWord((prev) => {
-								console.log(prev.index + 1, words.length - 1)
 								return {
 									index: prev.index + 1 > words.length - 1 ? 0 : prev.index + 1,
 									word: words[

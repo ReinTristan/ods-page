@@ -1,9 +1,8 @@
-import { Flame, Gem} from 'lucide-react'
+import { Flame, Gem } from 'lucide-react'
 import perfil from '../assets/perfil.png'
 import { useAuthStore } from '@/lib/useAuthStore'
 export default function Profile() {
-	const { user, isLoggedIn } = useAuthStore()
-	console.log(user, isLoggedIn)
+	const { user } = useAuthStore()
 	return (
 		<div className='h-dvh'>
 			<div className='bg-cyan-500 h-1/2 flex justify-center items-center'>

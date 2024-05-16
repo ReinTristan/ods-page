@@ -73,7 +73,6 @@ export default function SopaDeLetras() {
 	const handleCellClick = (row, col) => {
 		const newSelectedCells = [...selectedCells, { row, col }]
 		setSelectedCells(newSelectedCells)
-		console.log(newSelectedCells)
 	}
 
 	return (
