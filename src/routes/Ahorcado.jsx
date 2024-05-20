@@ -1,7 +1,7 @@
 import { ODS_INFO } from '@/lib/informacionODS'
 import { getWords } from '@/lib/utils'
 import { useCallback, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import {
 	Dialog,
 	DialogContent,
@@ -13,7 +13,9 @@ import { Button } from '@/components/ui/button'
 import { useAuthStore } from '@/lib/useAuthStore'
 export default function Ahorcado() {
 	const [dialog, setDialog] = useState(false)
-	const { setUser, user } = useAuthStore()
+	const { setUser, user, setIsLoggedIn } = useAuthStore()
+	const navigate = useNavigate()
+
 	const { id: odsID } = useParams()
 	const [ODS] = useState(() => {
 		let ods = odsID > 17 || odsID < 1 ? 1 : odsID
@@ -51,6 +53,13 @@ export default function Ahorcado() {
 		document.addEventListener('keypress', handler)
 		return () => {
 			document.removeEventListener('keypress', handler)
+		}
+	}, [])
+	useEffect(() => {
+		console.log(user)
+		if (!user) {
+			setIsLoggedIn(false)
+			navigate('/auth/login')
 		}
 	}, [])
 

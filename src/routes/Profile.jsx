@@ -1,8 +1,21 @@
 import { Flame, Gem } from 'lucide-react'
 import perfil from '../assets/perfil.png'
 import { useAuthStore } from '@/lib/useAuthStore'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 export default function Profile() {
-	const { user } = useAuthStore()
+	const { user, setIsLoggedIn } = useAuthStore()
+	const navigate = useNavigate()
+	useEffect(() => {
+		console.log(user)
+		if (!user) {
+			setIsLoggedIn(false)
+			navigate('/auth/login')
+		}
+	}, [])
+	if (!user) {
+		return null
+	}
 	return (
 		<div className='h-dvh'>
 			<div className='bg-cyan-500 h-1/2 flex justify-center items-center'>
